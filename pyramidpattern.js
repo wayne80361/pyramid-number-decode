@@ -15,3 +15,17 @@
 function pyramidNumber(n) {
   return (n * (n + 1)) / 2;
 }
+
+// generate needed numbers for a given height
+function generatePattern(height) {
+  let pattern = [];
+  for (let i = 1; i <= height; i++) {
+    pattern.push(pyramidNumber(i));
+  }
+  return pattern;
+}
+
+// test
+console.log(generatePattern(1)); // output [ 1 ]
+console.log(generatePattern(5)); // output [ 1, 3, 6, 10, 15 ]
+console.log(generatePattern(12)); // output [ 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66, 78 ]
