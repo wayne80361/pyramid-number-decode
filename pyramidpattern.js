@@ -8,3 +8,10 @@
 
 // each number will pair with a word
 // figure only the word on the right from top to bottom
+// the pattern would be 1,3,6,10,15,21,28,36.....
+
+// assume the pyramid has height on "n"
+// this will figure out the number on the right side for a given n
+function pyramidNumber(n) {
+  return (n * (n + 1)) / 2;
+}
