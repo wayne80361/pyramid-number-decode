@@ -29,3 +29,14 @@ function findMaxpyramidNumber(messageFilePath) {
   }
   return pyramidNumber(n - 1);
 }
+
+// function to generate the pattern based on the maximum pyramid number
+function generatePattern(maxPyramidNumber) {
+  let pattern = [];
+  let n = 1;
+  while (pyramidNumber(n) <= maxPyramidNumber) {
+    pattern.push(pyramidNumber(n));
+    n++;
+  }
+  return pattern;
+}
