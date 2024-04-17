@@ -40,3 +40,32 @@ function generatePattern(maxPyramidNumber) {
   }
   return pattern;
 }
+
+// function to read the txt file and find the paired word
+function findPairedWords(messageFilePath, pattern) {
+  let txtContent = fs.readFileSync(messageFilePath, "utf8");
+  // split the file content into lines
+  let lines = txtContent.trim().split("\n");
+
+  // map line entries to objects containing number and word
+  let entries = lines.map((line) => {
+    let [number, word] = line.trim().split(" ");
+    return { number: parseInt(number), word };
+  });
+
+  // sort entries by number
+  entries.sort((a, b) => a.number - b.number);
+
+  // array to store the paired words
+  let pairedWords = [];
+
+  // find the paired word for each triangular number in the pattern
+  pattern.forEach((num) => {
+    let entry = entries.find((e) => e.number === num);
+    if (entry) {
+      pairedWords.push(entry.word);
+    }
+  });
+
+  return pairedWords;
+}
