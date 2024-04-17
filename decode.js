@@ -69,3 +69,32 @@ function findPairedWords(messageFilePath, pattern) {
 
   return pairedWords;
 }
+
+function test1() {
+  // test
+  let messageFilePath = "encoded_message.txt"; // path to your message file
+  let maxTriangularNumber = findMaxpyramidNumber(messageFilePath);
+  let pattern = generatePattern(maxTriangularNumber);
+
+  // find the paired words in the message file based on the pattern
+  let pairedWords = findPairedWords(messageFilePath, pattern);
+
+  // display the paired words
+  console.log(pairedWords);
+}
+
+function test2() {
+  // test 2
+  let messageFilePath = "encoded_msg2.txt"; // path to your message file
+  let maxTriangularNumber = findMaxpyramidNumber(messageFilePath);
+  let pattern = generatePattern(maxTriangularNumber);
+
+  // find the paired words in the message file based on the pattern
+  let pairedWords = findPairedWords(messageFilePath, pattern);
+
+  // display the paired words
+  console.log(pairedWords);
+}
+
+test1();
+test2();
